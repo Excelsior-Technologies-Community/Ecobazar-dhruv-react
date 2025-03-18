@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "ProductImg" : "./Img/Image (6).png",
+        "productEffect" : ["Food","byAdmin","Comments"],
+        "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+    },
+    {
+        "id" : 2,
+        "ProductImg" : "./Img/Image (7).png",
+        "productEffect" : ["Food","byAdmin","Comments"],
+        "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+    },
+    {
+        "id" : 3,
+        "ProductImg" : "./Img/Image (8).png",
+        "productEffect" : ["Food","byAdmin","Comments"],
+        "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+    }
+]

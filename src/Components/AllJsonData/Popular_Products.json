@@ -1,0 +1,142 @@
+[
+    {
+        "id" : 1,
+        "productImg" : "./Img/Image.png",
+        "productName" : "Green Apple",
+        "ProductPrice" : ["$14.99","$20.99"],
+        "productReting" : 4
+    },
+    {
+        "id" : 2,
+        "productImg" : "./Img/Product Image.png",
+        "productName" : "Fresh Indian Malta",
+        "ProductPrice" : "$20.00",
+        "productReting" : 2
+    },
+    {
+        "id" : 3,
+        "productImg" : "./Img/Product Image (1).png",
+        "productName" : "Chinese cabbage",
+        "ProductPrice" : "14.00",
+        "productReting" : 3
+    },
+    {
+        "id" : 4,
+        "productImg" : "./Img/Image (1).png",
+        "productName" : "Green Lettuce",
+        "ProductPrice" : "$09.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 5,
+        "productImg" : "./Img/Image (2).png",
+        "productName" : "Eggplant",
+        "ProductPrice" : "$34.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 6,
+        "productImg" : "./Img/Image (3).png",
+        "productName" : "Big Potatoes",
+        "ProductPrice" : "$20.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 7,
+        "productImg" : "./Img/Image (4).png",
+        "productName" : "Corn",
+        "ProductPrice" : "$20.00",
+        "productReting" : 2
+    },
+    {
+        "id" : 8,
+        "productImg" : "./Img/Image (5).png",
+        "productName" : "Fresh Cauliflower",
+        "ProductPrice" : "$12.99",
+        "productReting" : 5
+    },
+    {
+        "id" : 9,
+        "productImg" : "./Img/Product Image (2).png",
+        "productName" : "Green Capsicum",
+        "ProductPrice" : ["$9.00","$14.99"],
+        "productReting" : 0
+    },
+    {
+        "id" : 10,
+        "productImg" : "./Img/Product Image (3).png",
+        "productName" : "Green Chili",
+        "ProductPrice" : "$37.00",
+        "productReting" : 3
+    },
+    {
+        "id" : 11,
+        "productImg" : "./Img/Image.png",
+        "productName" : "Green Apple",
+        "ProductPrice" : ["$14.99","$20.99"],
+        "productReting" : 4
+    },
+    {
+        "id" : 12,
+        "productImg" : "./Img/Product Image.png",
+        "productName" : "Fresh Indian Malta",
+        "ProductPrice" : "$20.00",
+        "productReting" : 2
+    },
+    {
+        "id" : 13,
+        "productImg" : "./Img/Product Image (1).png",
+        "productName" : "Chinese cabbage",
+        "ProductPrice" : "14.00",
+        "productReting" : 3
+    },
+    {
+        "id" : 14,
+        "productImg" : "./Img/Image (1).png",
+        "productName" : "Green Lettuce",
+        "ProductPrice" : "$09.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 15,
+        "productImg" : "./Img/Image (2).png",
+        "productName" : "Eggplant",
+        "ProductPrice" : "$34.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 16,
+        "productImg" : "./Img/Image (3).png",
+        "productName" : "Big Potatoes",
+        "ProductPrice" : "$20.00",
+        "productReting" : 5
+    },
+    {
+        "id" : 17,
+        "productImg" : "./Img/Image (4).png",
+        "productName" : "Corn",
+        "ProductPrice" : "$20.00",
+        "productReting" : 2
+    },
+    {
+        "id" : 18,
+        "productImg" : "./Img/Image (5).png",
+        "productName" : "Fresh Cauliflower",
+        "ProductPrice" : "$12.99",
+        "productReting" : 5
+    },
+    {
+        "id" : 19,
+        "productImg" : "./Img/Product Image (2).png",
+        "productName" : "Green Capsicum",
+        "ProductPrice" : ["$9.00","$14.99"],
+        "productReting" : 0
+    },
+    {
+        "id" : 20,
+        "productImg" : "./Img/Product Image (3).png",
+        "productName" : "Green Chili",
+        "ProductPrice" : "$37.00",
+        "productReting" : 3
+    }
+]      

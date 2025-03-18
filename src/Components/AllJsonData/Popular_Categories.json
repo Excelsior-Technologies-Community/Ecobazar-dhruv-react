@@ -1,0 +1,122 @@
+[
+    {
+        "id" : "1",
+        "productImg" : "./Img/image 1 (12).png",
+        "productName" : "Fresh Fruit"
+    },
+    {
+        "id" : "2",
+        "productImg" : "./Img/image 1 (1).png",
+        "productName" : "Fresh Vegetables"
+    },
+    {
+        "id" : "3",
+        "productImg" : "./Img/image 1 (2).png",
+        "productName" : "Meat & Fish"
+    },
+    {
+        "id" : "4",
+        "productImg" : "./Img/image 1 (3).png",
+        "productName" : "Snacks"
+    },
+    {
+        "id" : "5",
+        "productImg" : "./Img/image 1 (4).png",
+        "productName" : "Beverages"
+    },
+    {
+        "id" : "6",
+        "productImg" : "./Img/image 1 (5).png",
+        "productName" : "Beauty & Health"
+    },
+    {
+        "id" : "7",
+        "productImg" : "./Img/image 1 (6).png",
+        "productName" : "Bread & Bakery"
+    },
+    {
+        "id" : "8",
+        "productImg" : "./Img/image 1 (7).png",
+        "productName" : "Baking Needs"
+    },
+    {
+        "id" : "9",
+        "productImg" : "./Img/image 1 (8).png",
+        "productName" : "Cooking"
+    },
+    {
+        "id" : "10",
+        "productImg" : "./Img/image 1 (9).png",
+        "productName" : "Diabetic Food"
+    },
+    {
+        "id" : "11",
+        "productImg" : "./Img/image 1 (10).png",
+        "productName" : "Dish Detergents"
+    },
+    {
+        "id" : "12",
+        "productImg" : "./Img/image 1 (11).png",
+        "productName" : "Oil"
+    },
+    {
+        "id" : "13",
+        "productImg" : "./Img/image 1 (12).png",
+        "productName" : "Fresh Fruit"
+    },
+    {
+        "id" : "14",
+        "productImg" : "./Img/image 1 (1).png",
+        "productName" : "Fresh Vegetables"
+    },
+    {
+        "id" : "15",
+        "productImg" : "./Img/image 1 (2).png",
+        "productName" : "Meat & Fish"
+    },
+    {
+        "id" : "16",
+        "productImg" : "./Img/image 1 (3).png",
+        "productName" : "Snacks"
+    },
+    {
+        "id" : "17",
+        "productImg" : "./Img/image 1 (4).png",
+        "productName" : "Beverages"
+    },
+    {
+        "id" : "18",
+        "productImg" : "./Img/image 1 (5).png",
+        "productName" : "Beauty & Health"
+    },
+    {
+        "id" : "19",
+        "productImg" : "./Img/image 1 (6).png",
+        "productName" : "Bread & Bakery"
+    },
+    {
+        "id" : "20",
+        "productImg" : "./Img/image 1 (7).png",
+        "productName" : "Baking Needs"
+    },
+    {
+        "id" : "21",
+        "productImg" : "./Img/image 1 (8).png",
+        "productName" : "Cooking"
+    },
+    {
+        "id" : "22",
+        "productImg" : "./Img/image 1 (9).png",
+        "productName" : "Diabetic Food"
+    },
+    {
+        "id" : "23",
+        "productImg" : "./Img/image 1 (10).png",
+        "productName" : "Dish Detergents"
+    },
+    {
+        "id" : "24",
+        "productImg" : "./Img/image 1 (11).png",
+        "productName" : "Oil"
+    }
+]
