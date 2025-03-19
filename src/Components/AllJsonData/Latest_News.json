@@ -2,19 +2,46 @@
     {
         "id" : 1,
         "ProductImg" : "./Img/Image (6).png",
-        "productEffect" : ["Food","byAdmin","Comments"],
+        "productEffect" : [ {
+            "icon" : "fa-solid fa-utensils",
+            "title" : "Food"
+        },{
+            "icon" : "fa-solid fa-comment",
+            "title" : "Comment"
+        },{
+            "icon" : "fa-solid fa-user-tie",
+            "title" : "byAdmin"
+        }],
         "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
     },
     {
         "id" : 2,
         "ProductImg" : "./Img/Image (7).png",
-        "productEffect" : ["Food","byAdmin","Comments"],
+        "productEffect" :[ {
+            "icon" : "fa-solid fa-utensils",
+            "title" : "Food"
+        },{
+            "icon" : "fa-solid fa-comment",
+            "title" : "Comment"
+        },{
+            "icon" : "fa-solid fa-user-tie",
+            "title" : "byAdmin"
+        }],
         "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
     },
     {
         "id" : 3,
         "ProductImg" : "./Img/Image (8).png",
-        "productEffect" : ["Food","byAdmin","Comments"],
+        "productEffect" :[ {
+            "icon" : "fa-solid fa-utensils",
+            "title" : "Food"
+        },{
+            "icon" : "fa-solid fa-comment",
+            "title" : "Comment"
+        },{
+            "icon" : "fa-solid fa-user-tie",
+            "title" : "byAdmin"
+        }],
         "ProductTitle" : "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
     }
 ]

@@ -4,11 +4,20 @@ import Popular_Categories from '../AllJsonData/Popular_Categories.json'
 import Popular_Products from '../AllJsonData/Popular_Products.json'
 import Featured_Products from '../AllJsonData/Featured_Products.json'
 import Latest_News from '../AllJsonData/Latest_News.json'
+import Client_Testimonials from '../AllJsonData/Client_Testimonials.json'
 import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination } from 'swiper/modules';
+
+
+
+
+
 
 
 
 function Home() {
+    const [visibleProducts, setVisibleProducts] = useState(10);
     const [activeProduct, setActiveProduct] = useState(null);
     const [factivieProduct, setFactiveProduct] = useState(null);
     const [sactivieProduct, setSactiveProduct] = useState(null);
@@ -17,6 +26,10 @@ function Home() {
     const [showAll, setShowAll] = useState(false);
     const [showAllt, setShowAllt] = useState(false);
     const [showAlltt, setShowAlltt] = useState(false);
+
+    const loadMoreProducts = () => {
+        setVisibleProducts((prev) => prev + 10);
+    };
 
     const displayedProducts = showAll ? Popular_Categories : Popular_Categories.slice(0, 12);
     const displayedProductst = showAllt ? Popular_Products : Popular_Products.slice(0, 10);
@@ -74,12 +87,17 @@ function Home() {
                 </div>
 
                 <div className="row popular_productMain mt-3">
-                    {displayedProductst.map((element) => (
+                    {displayedProductst.filter(element => element.product === "active").map((element) => (
                         <div
                             className={`col-md-2 border position-relative p-3 main_click_box ${activeProduct === element.id ? "active" : ""}`}
                             key={element.id}
                             onClick={() => setActiveProduct(element.id)}
                         >
+                            {element.DiscountAmount && (
+                                <button type="button" className="btn btn-danger position-absolute">
+                                    {element.DiscountAmount}
+                                </button>
+                            )}
                             <img src={element.productImg} className="products_img" alt="" />
                             <span className="d-flex activedtextcolor">{element.productName}</span>
                             <div className="d-flex align-items-center justify-content-between">
@@ -123,6 +141,74 @@ function Home() {
                     </div>
                 </div>
 
+                <div className="row mt-md-5">
+                    <div className="col-md-4 text-align-start">
+                        <h2 className="d-flex text-start">Hots Deals</h2>
+                    </div>
+                    <div className="col-md-4 offset-md-4 d-flex align-items-center justify-content-end last-col-gap">
+                        <span>View All</span>
+                        <FontAwesomeIcon icon={faArrowRightLong} />
+                    </div>
+                </div>
+
+                <div className="row mt-4 popular_productMain d-flex justify-content-center">
+                    {Popular_Products.filter(element => element.discount === "active").slice(0, visibleProducts).map((element) => (
+                        <div
+                            className={`col-md-2 border position-relative p-3 main_click_box ${activeProduct === element.id ? "active" : ""}`}
+                            key={element.id}
+                            onClick={() => setActiveProduct(element.id)}
+                        >
+                            {element.DiscountAmount && (
+                                <button type="button" className="btn btn-danger position-absolute">
+                                    {element.DiscountAmount}
+                                </button>
+                            )}
+                            <img src={element.productImg} className="products_img" alt="" />
+                            <span className="d-flex activedtextcolor">{element.productName}</span>
+                            <div className="d-flex align-items-center justify-content-between">
+                                <span className="d-flex">
+                                    {Array.isArray(element.ProductPrice) ? (
+                                        <>
+                                            <b>{element.ProductPrice[0]}</b>
+                                            <span className="text-muted"><del>{element.ProductPrice[1]}</del></span>
+                                        </>
+                                    ) : (
+                                        <b>{element.ProductPrice}</b>
+                                    )}
+                                </span>
+                                <button type="button" class="btn btn-outline-success popular-produ-img"><FontAwesomeIcon icon={faBagShopping} /></button>
+
+                            </div>
+
+                            <div className="d-flex gap-3 star-five mt-1">
+                                {[...Array(5)].map((_, index) => (
+                                    <FontAwesomeIcon key={index} icon={faStar} style={{ color: index < element.productReting ? "orange" : "lightgray" }} />
+                                ))}
+                            </div>
+                            <div className="position-absolute  activeshowbuttons">
+                                <button type="button" class="btn btn-outline-dark popular-produ-img">
+                                    <FontAwesomeIcon icon={faHeart} /></button>
+                                <button type="button" class="btn btn-outline-dark popular-produ-img mt-2">
+                                    <FontAwesomeIcon icon={faEye} /></button>
+                            </div>
+                        </div>
+                    ))}
+                    {visibleProducts < Popular_Products.filter((element) => element.discount === "active").length && (
+                        <div className="text-center mt-5">
+                            <button onClick={loadMoreProducts} className="btn btn-outline-dark">
+                                Load More
+                            </button>
+                        </div>
+                    )}
+                </div>
+
+                <div className="row mt-5">
+                    <div className="col-md-12">
+                        <img src="./Img/Discount Bannar.png" alt="" style={{ height: "100%", width: "100%" }} />
+                    </div>
+                </div>
+
+
 
                 <div className="row mt-md-5">
                     <div className="col-md-4 text-align-start">
@@ -130,15 +216,15 @@ function Home() {
                     </div>
                     <div className="col-md-4 offset-md-4 d-flex align-items-center justify-content-end last-col-gap">
                         <span onClick={() => setShowAlltt(!showAlltt)}>
-                        {showAlltt ? "Show Less" : "View All"}</span>
+                            {showAlltt ? "Show Less" : "View All"}</span>
                         <FontAwesomeIcon icon={faArrowRightLong} />
                     </div>
                 </div>
                 <div className="row popular_productMain mt-3">
                     {displayedProductstt.map((element) => (
                         <div className={`col-md-2 border position-relative p-3 main_click_box ${sactivieProduct === element.id ? "active" : ""}`}
-                        key={element.id}
-                        onClick={() => setSactiveProduct(element.id)}>
+                            key={element.id}
+                            onClick={() => setSactiveProduct(element.id)}>
                             <img src={element.productImg} className="products_img" alt="" />
                             <span className="d-flex activedtextcolor">{element.productName}</span>
                             <div className="d-flex align-items-center justify-content-between">
@@ -172,19 +258,78 @@ function Home() {
 
                 </div>
 
-            <div className="row mt-5 d-flex justify-content-center">
-               <h2 className="text-center">Latest News</h2>
+                <div className="row mt-5 d-flex justify-content-center">
+                    <h2 className="text-center">Latest News</h2>
 
-            
-            </div>
-            <div className="row mt-3">
-            {Latest_News.map((element) => (
-                <div className="col-md-4" key={element.key}>
-<img src={element.ProductImg} alt="" className="latest_news_img"/>
-<p className="text-start mt-2">{element.ProductTitle}</p>
+
                 </div>
-               ))}
-            </div>
+                <div className="row mt-3">
+                    {Latest_News.map((element) => (
+                        <div className="col-md-4" key={element.key}>
+                            <img src={element.ProductImg} alt="" className="latest_news_img" />
+                            <span className="d-flex align-item-center mt-2 text-muted news-gap">{element.productEffect.map((ele, i) => (
+                                <div key={i} className="d-flex align-items-center gap-3">
+                                    <i className={ele.icon} />
+                                    <span>{ele.title}</span>
+                                </div>
+                            ))}</span>
+                            <p className="text-start mt-2 client-viewText">{element.ProductTitle}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="row">
+                    <div className="col-md-12">
+                        <img src="./Img/Company Logo.png" alt="" style={{ height: "100%", width: "100%" }} />
+                    </div>
+                </div>
+
+                <h2 className="mb-4">Follow us on Instagram</h2>
+                <div className="row mt-5">
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post.png" alt="" className="hover-imgs" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post (1).png" className="hover-imgs" alt="" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post (2).png" alt="" className="hover-imgs" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post (3).png" alt="" className="hover-imgs" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post (4).png" alt="" className="hover-imgs" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                    <div className="col-md-2 position-relative hover-insta-icon-main">
+                        <img src="./Img/Instagram Post (5).png" alt="" className="hover-imgs" style={{ height: "100%", width: "100%" }} />
+                        <i class="fa-brands fa-square-instagram position-absolute hover-insta-icon"></i>
+                    </div>
+                </div>
+
+                <div className="row mt-md-5">
+                    <div className="col-md-4 client-viewText">
+                        <h4 className="">Subcribe our Newsletter</h4>
+                        <span className="">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</span>
+                    </div>
+                    <div className="col-md-6 mt-3">
+                        <div class="input-group mb-3 border-radius">
+                            <input type="text" class="form-control border-radius" placeholder="Your email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            <button class="btn btn-success border-radius" type="button" id="button-addon2">Subscribe</button>
+                        </div>
+                    </div>
+                    <div className="col-md-2 d-flex mt-3 justify-content-between main-for-icon">
+                        <i class="fa-brands fa-facebook frist-icons"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-solid fa-p"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
             </div>
 
 

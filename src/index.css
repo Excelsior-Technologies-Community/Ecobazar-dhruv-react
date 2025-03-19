@@ -117,3 +117,51 @@
   height: 310px;
     width: 348px;
 }
+.news-gap{
+  gap: 10px;
+}
+.client-viewText{
+  text-align: left;
+}
+.hover-insta-icon{
+  left: 86px;
+    top: 76px;
+    font-size: 28px;
+    color: white;
+    display: none;
+}
+.hover-insta-icon-main:hover {
+  .hover-insta-icon{
+    display: block;
+  }
+}
+.hover-insta-icon-main:hover{
+  .hover-imgs{
+    opacity: 0.5;
+  }
+}
+.frist-icons{
+  color: green;
+}
+.main-for-icon i{
+  font-size: 22px;
+}
+.border-radius{
+  border-radius: 34px;
+  position: absolute;
+  right: 0px;
+}
+.input-group>.form-control:not(:last-child) {
+   border-top-right-radius: 34px;
+   border-bottom-right-radius: 34px;
+}
+.hr-row{
+  width: 100%;
+  background-color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.footer{
+  background-color: rgb(53, 49, 49);
+  color: white;
+}
