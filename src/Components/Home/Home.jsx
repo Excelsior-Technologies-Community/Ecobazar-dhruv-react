@@ -6,8 +6,11 @@ import Featured_Products from '../AllJsonData/Featured_Products.json'
 import Latest_News from '../AllJsonData/Latest_News.json'
 import Client_Testimonials from '../AllJsonData/Client_Testimonials.json'
 import { useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 
 
@@ -277,6 +280,46 @@ function Home() {
                         </div>
                     ))}
                 </div>
+
+<div className="row mt-md-5">
+<h2 className="d-flex">Client Testimonials</h2>
+</div>
+                <div className="position-relative">
+
+      <Swiper
+        slidesPerView={3}  
+        spaceBetween={30}  
+        pagination={{ clickable: true }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {Client_Testimonials.map((review) => (
+          <SwiperSlide key={review.id}>
+            <div className=" client-card">
+                <img src="./Img/Vector.png" className="d-flex " alt="" style={{height: "26px"}}/>
+                <span className="client-review mt-2">{review.clientreview}</span>
+             <div className="d-flex align-item-center mt-4">
+             <img
+                src={review.clientProfile}
+                alt={review.ClientName} style={{height: "40px" , width:"40px"}}
+                className="client-img d-flex"
+              />
+              <div className="review-left-margin">
+              <span className="d-flex"><b>{review.ClientName}</b></span>
+              <span className="d-flex">costmer</span>
+              </div>
+              <div className="d-flex gap-3 star-five mt-2 margin-left" >
+                                {[...Array(5)].map((_, index) => (
+                                    <FontAwesomeIcon key={index} icon={faStar} style={{ color: index < review.reting ? "orange" : "lightgray" }} />
+                                ))}
+                            </div>
+             </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
 
                 <div className="row">
                     <div className="col-md-12">

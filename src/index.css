@@ -1,11 +1,13 @@
-.top-header{
+.top-header {
   gap: 6px;
 }
-.top-head-button{
+
+.top-head-button {
   background: #22bf22;
   color: white;
 }
-.bag-cart{
+
+.bag-cart {
   top: 0;
   left: 15px;
   background: green;
@@ -13,155 +15,220 @@
   border-radius: 20px;
   padding: 0px 8px 0px 8px;
 }
-.bag-cart span{
+
+.bag-cart span {
   font-size: 11px;
 }
-.font-heart{
+
+.font-heart {
   font-size: 32px;
 }
-.logo-img img{
+
+.logo-img img {
   height: 36px;
 }
-.head-span{
+
+.head-span {
   font-size: 11px;
 }
-.head-span-2{
+
+.head-span-2 {
   font-size: 13px;
 }
-.last-col-gap{
- gap: 10px;
+
+.last-col-gap {
+  gap: 10px;
 }
-.border-r-heart{
+
+.border-r-heart {
   border-right: 1.5px solid grey;
   height: 30px;
 }
-.border-r-heart-inner{  
+
+.border-r-heart-inner {
   padding-right: 10px;
 }
-.color-white{
+
+.color-white {
   color: white;
 }
-.margin-left{
+
+.margin-left {
   margin-left: 6px;
 }
-.home-img img{
+
+.home-img img {
   height: 100%;
   width: 100%;
 }
-.home-s-img img{
+
+.home-s-img img {
   height: 240px;
   width: 354px;
 }
-.home-buttom-img img{
+
+.home-buttom-img img {
   width: 100%;
 }
-.popular_cargories-img{
+
+.popular_cargories-img {
   height: 120px;
   width: 120px;
 }
-.star-five{
+
+.star-five {
   color: orange;
 }
-.popular_productMain .col-md-2{
+
+.popular_productMain .col-md-2 {
   flex: auto;
   min-width: 20% !important;
 }
-.products_img{
+
+.products_img {
   height: 170px;
   width: 170px;
 }
-.popular-produ-img{
+
+.popular-produ-img {
   border: 1px solid gray;
   border-radius: 18px;
   padding: 3px 8px;
   color: gray;
 }
-.main_popular_categories.active{
-  .main_popular_categories_inner{
+
+.main_popular_categories.active {
+  .main_popular_categories_inner {
     border: 2px solid green !important;
   }
 }
-.main_popular_categories.active{
-  .main_popular_categ_name{
+
+.main_popular_categories.active {
+  .main_popular_categ_name {
     color: green;
   }
 }
+
 .main_click_box.active {
-  border: 2px solid green !important; 
-  background-color: #f0f8ff; 
+  border: 2px solid green !important;
+  background-color: #f0f8ff;
 }
+
 .main_click_box.active {
-.activedtextcolor{
-  color: #22bf22;
+  .activedtextcolor {
+    color: #22bf22;
+  }
 }
-}
-.activeshowbuttons{
+
+.activeshowbuttons {
   display: none;
   top: 10px;
   right: 12px;
 
 }
-.main_click_box.active{
-  .activeshowbuttons{
+
+.main_click_box.active {
+  .activeshowbuttons {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
 }
-.Three-img img{
+
+.Three-img img {
   height: 100%;
   width: 100%;
 }
-.latest_news_img{
+
+.latest_news_img {
   height: 310px;
-    width: 348px;
+  width: 348px;
 }
-.news-gap{
+
+.news-gap {
   gap: 10px;
 }
-.client-viewText{
+
+.client-viewText {
   text-align: left;
 }
-.hover-insta-icon{
+
+.hover-insta-icon {
   left: 86px;
-    top: 76px;
-    font-size: 28px;
-    color: white;
-    display: none;
+  top: 76px;
+  font-size: 28px;
+  color: white;
+  display: none;
 }
+
 .hover-insta-icon-main:hover {
-  .hover-insta-icon{
+  .hover-insta-icon {
     display: block;
   }
 }
-.hover-insta-icon-main:hover{
-  .hover-imgs{
+
+.hover-insta-icon-main:hover {
+  .hover-imgs {
     opacity: 0.5;
   }
 }
-.frist-icons{
+
+.frist-icons {
   color: green;
 }
-.main-for-icon i{
+
+.main-for-icon i {
   font-size: 22px;
 }
-.border-radius{
+
+.border-radius {
   border-radius: 34px;
   position: absolute;
   right: 0px;
 }
+
 .input-group>.form-control:not(:last-child) {
-   border-top-right-radius: 34px;
-   border-bottom-right-radius: 34px;
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
 }
-.hr-row{
+
+.hr-row {
   width: 100%;
   background-color: white;
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.footer{
+
+.footer {
   background-color: rgb(53, 49, 49);
   color: white;
+}
+
+.client-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.client-review{
+  display: flex;
+  text-align: start;
+  font-size: 14px;
+}
+.margin-left{
+  margin-left: 32px;
+}
+.review-left-margin{
+  margin-left: 10px;
 }
