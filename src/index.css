@@ -232,3 +232,38 @@
 .review-left-margin{
   margin-left: 10px;
 }
+.navbar-main button{
+  border: none;
+}
+.strat-color{
+  color: rgb(255, 204, 37);
+}
+.star-color-grey{
+  color: grey;
+}
+.All-button-categporis{
+  background: #d5d5d5;
+  color: black;
+  border-radius: 28px;
+}
+.All-button-categporis:hover{
+  background-color: #22bf22;
+  color: white;
+}
+.filtered-price-pro{
+  height: 123px;
+  width: 120px;
+}
+
+@media (min-width: 767px) { 
+  .latest_news_img {
+    height: 237px;
+    width: 255px;
+}
+.margin-left{
+  margin-left: 0px;
+}
+.review-sm-span{
+  font-size: 9px;
+}
+ }
