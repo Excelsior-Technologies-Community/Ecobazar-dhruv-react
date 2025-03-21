@@ -1,5 +1,6 @@
 import { faAngleDown, faHeart, faLocationDot, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router";
 
 function Header() {
     return (
@@ -44,8 +45,9 @@ function Header() {
 <div className="row navbar bg-dark border-bottom border-body mt-3 color-white" data-bs-theme="dark">
     <div className="d-md-none d-sm-flex col-5 col-sm-5 offset-1 offset-sm-1 "><img src="./Img/Categories.png" style={{height:"30px"}} alt="" /></div>
 <div className="col-md-7 d-sm-none d-none d-md-flex align-items-center justify-content-center navbar-main">
-<button class="btn gap-2 color-white " type="button" data-bs-toggle="dropdown">
-   Home
+<button class="btn gap-2 color-white " type="button" data-bs-toggle="">
+    <Link to="./">
+   Home</Link>
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button>
   <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>

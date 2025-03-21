@@ -11,7 +11,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import BlogPage from "./BlogPage";
+import { Link } from "react-router";
 
 
 
@@ -27,7 +27,7 @@ function Home() {
     const [sactivieProduct, setSactiveProduct] = useState(null);
 
 
-    const [showAll, setShowAll] = useState(false);
+    // const [showAll, setShowAll] = useState(false);
     const [showAllt, setShowAllt] = useState(false);
     const [showAlltt, setShowAlltt] = useState(false);
 
@@ -35,11 +35,11 @@ function Home() {
         setVisibleProducts((prev) => prev + 10);
     };
 
-    const displayedProducts = showAll ? Popular_Categories : Popular_Categories.slice(0, 12);
+    // const displayedProducts = showAll ? Popular_Categories : Popular_Categories.slice(0, 12);
     const displayedProductst = showAllt ? Popular_Products : Popular_Products.slice(0, 10);
     const displayedProductstt = showAlltt ? Featured_Products : Featured_Products.slice(0, 5);
 
-   
+//    const id = "23";
     return (
         <>
             <div className="container text-center mt-md-5 mt-3">
@@ -62,21 +62,24 @@ function Home() {
                     <div className="col-md-4 col-sm-7 col-8 text-align-start">
                         <h2 className="d-flex text-start">Popular Categories</h2>
                     </div>
-                    <div className="col-md-4 offset-md-4 col-sm-5 col-4 d-flex align-items-center justify-content-end last-col-gap">
-                        <span onClick={() => setShowAll(!showAll)}>
-                            {showAll ? "Show Less" : "View All"} </span>
+                    <div className="col-md-4 offset-md-4 col-sm-5 col-4 d-flex align-items-center justify-content-end last-col-gap"> 
+                        <span className="">
+                            <Link to="/BlogPage">
+                            View All </Link> </span>
                         <FontAwesomeIcon icon={faArrowRightLong} />
                     </div>
                 </div>
 
 
                 <div className="row">
-                    {displayedProducts.map((element) => (
+                    {Popular_Categories.map((element) => (
                         <div className={`col-md-2 col-sm-4 col-6 mt-3 main_popular_categories ${factivieProduct === element.id ? "active" : ""}`} key={element.id} onClick={() => setFactiveProduct(element.id)}>
+                            <Link to={`/BlogPage/${element.id}`}>
                             <div className="border p-2 main_popular_categories_inner">
                                 <img src={element.productImg} className="popular_cargories-img" alt="" />
                                 <span className="d-flex text-center justify-content-center main_popular_categ_name">{element.productName}</span>
                             </div>
+                    </Link>
                         </div>
                     ))}
                 </div>
@@ -373,7 +376,7 @@ function Home() {
                             <button class="btn btn-success border-radius" type="button" id="button-addon2">Subscribe</button>
                         </div>
                     </div>
-                    <div className="col-md-2 col-sm-4 col-6 offset-sm-2 d-flex mt-3 justify-content-between main-for-icon">
+                    <div className="col-md-2 col-sm-4 col-6 offset-sm-2 offset-md-0 d-flex mt-3 justify-content-between main-for-icon">
                         <i class="fa-brands fa-facebook frist-icons"></i>
                         <i class="fa-brands fa-twitter"></i>
                         <i class="fa-solid fa-p"></i>
@@ -381,7 +384,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-<BlogPage/>
 
         </>
     )

@@ -2,19 +2,59 @@ import { faAngleDown, faBagShopping, faEye, faHeart, faStar } from "@fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Popular_Products from '../AllJsonData/Popular_Products.json'
 import { height, width } from "@fortawesome/free-solid-svg-icons/fa0";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
 
 
 
-function BlogPage() {
+function BlogPage() { 
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [activeProduct, setActiveProduct] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState(id);
 
+
+
+  // useEffect(() => {
+  //   setSelectedCategories(id);
+  // }, [id]);
+
+
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // useEffect(() => {
+  //   if (name) {
+  //     // Filter products based on selected category name
+  //     const filtered = Popular_Products.filter((product) => product.Categories === decodeURIComponent(name));
+  //     setFilteredProducts(filtered);  
+  //   }
+  // }, [name]);
+
+  useEffect(() => {
+    if (selectedCategories) {
+      const filtered = Popular_Products.filter(
+        (product) => product.Categories === decodeURIComponent(selectedCategories)
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [selectedCategories]);
+
+  const handleCategoryChange = (category) => {
+    if (!category || !category.id || !category.name) {
+      console.error("Invalid category selected:", category);
+      return;
+      
+    }
+    navigate(`/BlogPage/${category.id}/${encodeURIComponent(category.name)}`);
+  }
+
+  
   return (
 
     <>
       <div className="container text-center mt-5">
         <div className="row">
-          <div className="col-md-2"><button type="button" class="btn btn-success">Filter <img src="./public/Img/Filter 24px.png" alt="" style={{ height: "30%", width: "30%" }} /></button></div>
+          <div className="col-md-2"><button type="button" class="btn btn-success">Filter <img src="/Img/Filter 24px.png" alt="" style={{ height: "30%", width: "30%" }} /></button></div>
           <div className="col-md-6">
             <label htmlFor="">Sort List :
               <select name="" id="" style={{ width: "180px" }}>
@@ -36,52 +76,39 @@ function BlogPage() {
               <h2>All Categories</h2>
               <FontAwesomeIcon icon={faAngleDown} />
             </div>
-            <div id="categoryList" class="collapse show mt-2">
-              <ul class="list-unstyled">
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category1" />
-                  <label class="form-check-label" for="category1">
-                    Fresh Fruit (25) <span class="text-muted">(134)</span>
+            <div id="categoryList" className="collapse show mt-2">
+            <ul className="list-unstyled">
+              {[
+                { id: "1", name: "Fresh Fruit" },
+                { id: "2", name: "Vegetables" },
+                { id: "3", name: "Meat & Fish" },
+                { id: "4", name: "Snacks" },
+                { id: "5", name: "Beverages" },
+                { id: "6", name: "Beauty & Health" },
+                { id: "7", name: "Bread & Bakery" },
+                { id: "8", name: "Baking Needs" },
+                { id: "9", name: "Cooking" },
+                { id: "10", name: "Diabetic Food" },
+                { id: "11", name: "Dish Detergents" },
+                { id: "12", name: "Oil" },
+              ].map((category) => (
+                <li className="form-check d-flex" key={category.id}>
+                  <input
+                    className="form-check-input"
+                    type="radio"
+                    name="category"
+                    id={`category-${category.id}`}
+                    value={category.id}
+                    checked={selectedCategories === category.id} 
+                    onChange={() => handleCategoryChange(category)}
+                  />
+                  <label className="form-check-label" htmlFor={`category-${category.id}`}>
+                    {category.name}
                   </label>
                 </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category2" />
-                  <label class="form-check-label " for="category2">
-                    Vegetables (150)
-                  </label>
-                </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category3" />
-                  <label class="form-check-label" for="category3">
-                    Cooking (54)
-                  </label>
-                </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category4" />
-                  <label class="form-check-label" for="category4">
-                    Snacks (47)
-                  </label>
-                </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category5" />
-                  <label class="form-check-label" for="category5">
-                    Beverages (43)
-                  </label>
-                </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category6" />
-                  <label class="form-check-label" for="category6">
-                    Beauty & Health (38)
-                  </label>
-                </li>
-                <li class="form-check d-flex">
-                  <input class="form-check-input" type="radio" name="category" id="category7" />
-                  <label class="form-check-label" for="category7">
-                    Bread & Bakery (15)
-                  </label>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </div>
             <hr />
             <div className="d-flex justify-content-between align-items-center">
               <h2>Price</h2>
@@ -175,7 +202,7 @@ function BlogPage() {
               <button type="button" class="btn All-button-categporis mt-md-2">Fruit</button>
             </div>
             <div className="mt-md-5">
-              <img src="./Img/Bannar (6).png" alt="" style={{ height: "100%", width: "100%" }} />
+              <img src="/Img/Bannar (6).png" alt="" style={{ height: "100%", width: "100%" }} />
             </div>
 
             <h3 className="mt-5 mb-3">Sale Products</h3>
@@ -188,7 +215,6 @@ function BlogPage() {
                   <div>
                     <span className="d-flex">{ele.productName}</span>
                     <span>{ele.ProductPrice}</span>
-                    {/* <span>{ele.productReting}</span> */}
                   </div>
                 </div>
               ))}
@@ -196,8 +222,66 @@ function BlogPage() {
 
           </div>
           <div className="col-md-9">
-            <div className="row">
-              {Popular_Products.filter(element => element.product === "active").map((element) => (
+
+          <div className="row">
+  {filteredProducts.length > 0 ? (
+    filteredProducts.map((element) => (
+      <div
+        className={`col-md-4 col-sm-6 col-12 border position-relative p-3 main_click_box ${activeProduct === element.id ? "active" : ""}`}
+        key={element.id}
+        onClick={() => setActiveProduct(element.id)}
+      >
+        {element.DiscountAmount && (
+          <button type="button" className="btn btn-danger position-absolute">
+            {element.DiscountAmount}
+          </button>
+        )}
+        <img src={element.productImg} className="products_img" alt={element.productName} />
+        <span className="d-flex activedtextcolor">{element.productName}</span>
+
+        <div className="d-flex align-items-center justify-content-between">
+          <span className="d-flex">
+            {Array.isArray(element.ProductPrice) ? (
+              <>
+                <b>{element.ProductPrice[0]}</b>
+                <span className="text-muted"><del>{element.ProductPrice[1]}</del></span>
+              </>
+            ) : (
+              <b>{element.ProductPrice}</b>
+            )}
+          </span>
+          <button type="button" className="btn btn-outline-success popular-produ-img">
+            <FontAwesomeIcon icon={faBagShopping} />
+          </button>
+        </div>
+
+        <div className="d-flex gap-3 star-five mt-1">
+          {[...Array(5)].map((_, index) => (
+            <FontAwesomeIcon 
+              key={index} 
+              icon={faStar} 
+              style={{ color: index < element.productReting ? "orange" : "lightgray" }} 
+            />
+          ))}
+        </div>
+
+        <div className="position-absolute activeshowbuttons">
+          <button type="button" className="btn btn-outline-dark popular-produ-img">
+            <FontAwesomeIcon icon={faHeart} />
+          </button>
+          <button type="button" className="btn btn-outline-dark popular-produ-img mt-2">
+            <FontAwesomeIcon icon={faEye} />
+          </button>
+        </div>
+      </div>
+    ))
+  ) : (
+    <p>No products found.</p>
+  )}
+</div>
+
+            {/* <div className="row">
+              {filteredProducts.length > 0 ? (filteredProducts.map((element) => (
                 <div
                   className={`col-md-4 col-sm-6 col-12 border position-relative p-3 main_click_box ${activeProduct === element.id ? "active" : ""}`}
                   key={element.id}
@@ -237,8 +321,8 @@ function BlogPage() {
                       <FontAwesomeIcon icon={faEye} /></button>
                   </div>
                 </div>
-              ))}
-            </div>
+              ))})
+            </div> */}
           </div>
         </div>
       </div>
