@@ -10,42 +10,29 @@ import { useNavigate, useParams } from "react-router";
 function BlogPage() { 
   const { id } = useParams();
   const navigate = useNavigate();
-  const [activeProduct, setActiveProduct] = useState(null);
-  const [selectedCategories, setSelectedCategories] = useState(id);
-
-
-
-  // useEffect(() => {
-  //   setSelectedCategories(id);
-  // }, [id]);
-
-
+  const [activeProduct, setActiveProduct] = useState(null); 
   const [filteredProducts, setFilteredProducts] = useState([]);
 
-  // useEffect(() => {
-  //   if (name) {
-  //     // Filter products based on selected category name
-  //     const filtered = Popular_Products.filter((product) => product.Categories === decodeURIComponent(name));
-  //     setFilteredProducts(filtered);  
-  //   }
-  // }, [name]);
 
   useEffect(() => {
-    if (selectedCategories) {
+    if (id) {
       const filtered = Popular_Products.filter(
-        (product) => product.Categories === decodeURIComponent(selectedCategories)
+        (product) => product.Categories === id
       );
+      
       setFilteredProducts(filtered);
     }
-  }, [selectedCategories]);
+  }, [ id]);
 
   const handleCategoryChange = (category) => {
+    console.log(category);
+    
     if (!category || !category.id || !category.name) {
       console.error("Invalid category selected:", category);
       return;
       
     }
-    navigate(`/BlogPage/${category.id}/${encodeURIComponent(category.name)}`);
+    navigate(`/BlogPage/${category.id}`);
   }
 
   
@@ -99,7 +86,7 @@ function BlogPage() {
                     name="category"
                     id={`category-${category.id}`}
                     value={category.id}
-                    checked={selectedCategories === category.id} 
+                    checked={id === category.id} 
                     onChange={() => handleCategoryChange(category)}
                   />
                   <label className="form-check-label" htmlFor={`category-${category.id}`}>

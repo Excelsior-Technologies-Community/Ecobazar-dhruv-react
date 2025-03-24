@@ -18,7 +18,15 @@ const router = createBrowserRouter([
 element: <Home />
       },
       {
+        path : "/BlogPage",
+        element : <BlogPage/> 
+      },
+      {
         path : "/BlogPage/:id",
+        element : <BlogPage/> 
+      },
+      {
+        path : "/BlogPage/:id/:category",
         element : <BlogPage/> 
       }
     ]
