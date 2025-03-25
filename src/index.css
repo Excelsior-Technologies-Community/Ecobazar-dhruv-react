@@ -79,7 +79,21 @@
 .star-five {
   color: orange;
 }
-
+.main-benner-div{
+  gap: 10px;
+  top: 133px;
+  left: 54px;
+}
+.bnner-div-button{
+  border: none;
+  padding: 10px;
+  border-radius: 28px;
+  background-color:#22bf22;
+  color: white;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
 .popular_productMain .col-md-2 {
   flex: auto;
   min-width: 20% !important;
@@ -261,11 +275,15 @@
 .last-col-gap span{
   color: black;
 }
+.blogDtsbtn{
+  top: 8px;
+  left: 19px;
+}
 
 @media (min-width: 767px) { 
   .latest_news_img {
-    height: 237px;
-    width: 255px;
+    height: 310px;
+    width: 349px;
 }
 .margin-left{
   margin-left: 0px;

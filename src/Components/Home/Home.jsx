@@ -1,4 +1,4 @@
-import { faArrowRightLong, faBagShopping, faEye, faHeart, faStar } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faArrowRightLong, faBagShopping, faEye, faHeart, faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Popular_Categories from '../AllJsonData/Popular_Categories.json'
 import Popular_Products from '../AllJsonData/Popular_Products.json'
@@ -68,6 +68,7 @@ function Home() {
                             View All </Link> </span>
                         <FontAwesomeIcon icon={faArrowRightLong} />
                     </div>
+                   
                 </div>
 
 
@@ -273,7 +274,7 @@ function Home() {
 
                 </div>
                 <div className="row mt-3">
-                    {Latest_News.map((element) => (
+                    {Latest_News.slice(0,3).map((element) => (
                         <div className="col-md-4 col-sm-6" key={element.key}>
                             <img src={element.ProductImg} alt="" className="latest_news_img" />
                             <span className="d-flex align-item-center mt-2 text-muted news-gap">{element.productEffect.map((ele, i) => (
@@ -283,6 +284,8 @@ function Home() {
                                 </div>
                             ))}</span>
                             <p className="text-start mt-2 client-viewText">{element.ProductTitle}</p>
+                            <Link to="/BlogDetails">
+                            <span className="d-flex fs-5 align-items-center gap-2 text-success">Read More <FontAwesomeIcon icon={faArrowRight} /></span></Link>
                         </div>
                     ))}
                 </div>

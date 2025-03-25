@@ -7,6 +7,8 @@ import { RouterProvider } from 'react-router'
 import Layout from './Components/Layout/Layout.jsx'
 import Home from './Components/Home/Home.jsx'
 import BlogPage from './Components/Home/BlogPage.jsx'
+import DropSelectedPage from './Components/Home/dropSelectedPage.jsx'
+import BlogDetails from './Components/Home/Blogdetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ element: <Home />
       {
         path : "/BlogPage/:id/:category",
         element : <BlogPage/> 
+      },
+      {
+        path : "/dropSelectedPage",
+        element : <DropSelectedPage/> 
+      },
+      {
+        path : "/BlogDetails",
+        element : <BlogDetails/> 
       }
     ]
   }

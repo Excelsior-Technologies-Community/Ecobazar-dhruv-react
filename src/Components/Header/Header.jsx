@@ -54,6 +54,12 @@ function Header() {
    Shop
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button>
+    <Link to="/dropSelectedPage">
+  <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
+   Shop_2
+  <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/> 
+  </button>
+  </Link>
   <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
    Pages
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
