@@ -7,11 +7,16 @@ import { useState } from "react";
 function dropSelectedPage() {
 
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedRating, setSelectedRating] = useState(null);
+    const [selectedPrice, setSelectedPrice] = useState(null);
     const [activeProduct, setActiveProduct] = useState(null); 
 
-    const filteredProducts = selectedCategory
-    ? Popular_Products.filter((product) => product.Categories === selectedCategory)
-    : Popular_Products;
+    const filteredProducts = Popular_Products.filter((product) => {
+      const categoryMatch = selectedCategory ? product.Categories === selectedCategory : true;
+      const ratingMatch = selectedRating ? product.productReting >= selectedRating : true;
+      const priceMatch = selectedPrice ? product.ProductPrice >= selectedPrice : true;
+      return categoryMatch && ratingMatch && priceMatch ;
+  });
     
     return(
         <>
@@ -49,9 +54,7 @@ function dropSelectedPage() {
 <div className="row mt-5">
 <div className="col-md-3 dropdown">
   <button className="btn  border gap-3 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  {selectedCategory
-              ? Popular_Categories.find((c) => c.id === selectedCategory)?.name
-              : "Select Category"} 
+    Select Categories 
     <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button>
   <ul className="dropdown-menu">
@@ -63,14 +66,29 @@ function dropSelectedPage() {
 
                   onClick={() => setSelectedCategory(category.id)}
                 >
-                  {category.name}
+                  {category.productName}
                 </a>
               </li>
             ))}
             </ul>   
 
 </div>
-<div className="col-md-2 dropdown gap-3 d-flex align-items-center justify-content-between">
+<div className="col-md-2 dropdown">
+    <button className="btn border d-flex align-items-center gap-3" type="button" data-bs-toggle="dropdown">
+        {selectedPrice ? `Price: $${selectedPrice}+` : "Select Price"}
+        <FontAwesomeIcon icon={faAngleDown} className="ms-auto" />
+    </button>
+    <ul className="dropdown-menu">
+        {[0,10, 20, 30, 40, 50].map((price) => (
+            <li key={price}>
+                <button className="dropdown-item" onClick={() => setSelectedPrice(price)}>
+                    ${price} & Above
+                </button>
+            </li>
+        ))}
+    </ul>
+</div>
+{/* <div className="col-md-2 dropdown gap-3 d-flex align-items-center justify-content-between">
   <button className="btn  border gap-3 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Selected Price     <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button>
@@ -79,17 +97,22 @@ function dropSelectedPage() {
     <li><a className="dropdown-item" href="#">Another action</a></li>
     <li><a className="dropdown-item" href="#">Something else here</a></li>
   </ul>
-</div>
-<div className="col-md-2 dropdown gap-3 d-flex align-items-center justify-content-between">
-  <button className="btn  border gap-1 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Selected Routing <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a className="dropdown-item" href="#">Action</a></li>
-    <li><a className="dropdown-item" href="#">Another action</a></li>
-    <li><a className="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
+</div> */}
+<div className="col-md-2 dropdown">
+                    <button className="btn border d-flex align-items-center gap-3" type="button" data-bs-toggle="dropdown">Selected Rating
+                        {/* {selectedRating ? `Rating: ${selectedRating}+` : "Select Rating"} */}
+                        <FontAwesomeIcon icon={faAngleDown} className="ms-auto" />
+                    </button>
+                    <ul className="dropdown-menu">
+                        {[5, 4, 3, 2, 1].map((rating) => (
+                            <li key={rating}>
+                                <button className="dropdown-item" onClick={() => setSelectedRating(rating)}>
+                                    {rating} Stars & Up
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
 <div className="col-md-2 dropdown gap-3 d-flex align-items-center justify-content-between offset-1">
   <button className="btn  border gap-4 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Sort by: Latst <FontAwesomeIcon icon={faAngleDown} className="margin-left"/>

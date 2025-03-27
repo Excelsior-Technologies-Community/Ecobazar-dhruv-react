@@ -12,21 +12,54 @@ function BlogPage() {
   const navigate = useNavigate();
   const [activeProduct, setActiveProduct] = useState(null); 
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [selectedRating, setSelectedRating] = useState(null);
+  const [price, setPrice] = useState(20); // Initial price value
 
+
+  const [modelData, setModelData] = useState({});
+    const [selectedmodelImage, setSelectedModelImage] = useState({});
+
+
+    const openModel = (item)=>{
+        setModelData(item);
+        setSelectedModelImage(item.variants[0])
+        const myModal = new bootstrap.Modal(document.getElementById("quickViewModal"));
+        myModal.show();
+    }
+
+  
+
+  const handlePriceChange = (event) => {
+    setPrice(event.target.value); // Update price when slider moves
+  };
 
   useEffect(() => {
+    let filtered = Popular_Products;
+    
+    // Filter by Category
     if (id) {
-      const filtered = Popular_Products.filter(
-        (product) => product.Categories === id
-      );
-      
-      setFilteredProducts(filtered);
+      filtered = filtered.filter(product => product.Categories === id);
     }
-  }, [ id]);
+
+    // Filter by Rating 
+    if (selectedRating) {
+      filtered = filtered.filter(product => product.productReting >= selectedRating);
+    }
+
+    
+    filtered = filtered.filter(product => {
+      const productPrice = Array.isArray(product.ProductPrice) ? product.ProductPrice[0] : product.ProductPrice;
+      return Number(productPrice) <= price;
+    });
+    
+    setFilteredProducts(filtered);
+  }, [id, selectedRating , price]);
+  
+  const handleRatingChange = (rating) => {
+    setSelectedRating(rating === selectedRating ? null : rating); // Toggle selection
+  };
 
   const handleCategoryChange = (category) => {
-    console.log(category);
-    
     if (!category || !category.id || !category.name) {
       console.error("Invalid category selected:", category);
       return;
@@ -101,73 +134,51 @@ function BlogPage() {
               <h2>Price</h2>
               <FontAwesomeIcon icon={faAngleDown} />
             </div>
-            <div class=" mt-3">
+            <div className="mt-3">
+      <div className="d-flex align-items-center">
+        <input
+          type="range"
+          className="form-range"
+          min="0"
+          max="50"
+          value={price}
+          onChange={handlePriceChange} // Handle slider change
+          style={{ color: "green" }}
+        />
+      </div>
+      <label className="fw-bold">
+        Price: <span className="text-dark">{price} — 50</span>
+      </label>
+    </div>
 
-              <div class="d-flex align-items-center">
-                <input type="range" class="form-range" min="0" max="2000" value="50" style={{ color: "green" }} />
-              </div>
-              <label class="fw-bold">Price: <span class="text-dark">50 — 1,500</span></label>
-            </div>
             <hr />
             <div className="d-flex justify-content-between mt-md-4 align-items-center">
               <h2>Rating</h2>
               <FontAwesomeIcon icon={faAngleDown} />
             </div>
-            <div class="form-check d-flex mt-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" />
-              <label class="form-check-label" for="flexCheckCheckedDisabled">
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <b className="ms-1">5.0 </b>
-              </label>
-            </div>
-            <div class="form-check d-flex mt-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" />
-              <label class="form-check-label" for="flexCheckCheckedDisabled">
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <b className="ms-1">4.0 & up </b>
-              </label>
-            </div>
-            <div class="form-check d-flex mt-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" />
-              <label class="form-check-label" for="flexCheckCheckedDisabled">
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <b className="ms-1">3.0 & up </b>
-              </label>
-            </div>
-            <div class="form-check d-flex mt-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" />
-              <label class="form-check-label" for="flexCheckCheckedDisabled">
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <b className="ms-1">0.2 & up </b>
-              </label>
-            </div>
-            <div class="form-check d-flex mt-2">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckCheckedDisabled" />
-              <label class="form-check-label" for="flexCheckCheckedDisabled">
-                <FontAwesomeIcon icon={faStar} className="strat-color" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <FontAwesomeIcon icon={faStar} className="star-color-grey" />
-                <b className="ms-1">1.0 & up </b>
-              </label>
-            </div>
+
+            {[5, 4, 3, 2, 1].map((rating, index) => (
+  <div className="form-check d-flex mt-2" key={index}>
+    <input
+      className="form-check-input"
+      type="checkbox"
+      value={rating}
+      id={`rating-${rating}`}
+      checked={selectedRating === rating}
+      onChange={() => handleRatingChange(rating)}
+    />
+    <label className="form-check-label" htmlFor={`rating-${rating}`}>
+      {[...Array(5)].map((_, i) => (
+        <FontAwesomeIcon
+          key={i}
+          icon={faStar}
+          className={i < rating ? "strat-color" : "star-color-grey"}
+        />
+      ))}
+      <b className="ms-1">{rating}.0 & up</b>
+    </label>
+  </div>
+))}
             <hr />
             <div className="d-flex justify-content-between mt-md-4 align-items-center">
               <h2>Popular Tag</h2>
@@ -256,9 +267,10 @@ function BlogPage() {
           <button type="button" className="btn btn-outline-dark popular-produ-img">
             <FontAwesomeIcon icon={faHeart} />
           </button>
-          <button type="button" className="btn btn-outline-dark popular-produ-img mt-2">
-            <FontAwesomeIcon icon={faEye} />
-          </button>
+          <button type="button" class="btn btn-outline-dark popular-produ-img mt-2" onClick={() => {
+                                    openModel(element)
+                                }}>
+                                    <FontAwesomeIcon icon={faEye} /></button>
         </div>
       </div>
     ))
@@ -267,52 +279,108 @@ function BlogPage() {
   )}
 </div>
 
-            {/* <div className="row">
-              {filteredProducts.length > 0 ? (filteredProducts.map((element) => (
-                <div
-                  className={`col-md-4 col-sm-6 col-12 border position-relative p-3 main_click_box ${activeProduct === element.id ? "active" : ""}`}
-                  key={element.id}
-                  onClick={() => setActiveProduct(element.id)}
-                >
-                  {element.DiscountAmount && (
-                    <button type="button" className="btn btn-danger position-absolute">
-                      {element.DiscountAmount}
-                    </button>
-                  )}
-                  <img src={element.productImg} className="products_img" alt="" />
-                  <span className="d-flex activedtextcolor">{element.productName}</span>
-                  <div className="d-flex align-items-center justify-content-between">
-                    <span className="d-flex">
-                      {Array.isArray(element.ProductPrice) ? (
-                        <>
-                          <b>{element.ProductPrice[0]}</b>
-                          <span className="text-muted"><del>{element.ProductPrice[1]}</del></span>
-                        </>
-                      ) : (
-                        <b>{element.ProductPrice}</b>
-                      )}
-                    </span>
-                    <button type="button" class="btn btn-outline-success popular-produ-img"><FontAwesomeIcon icon={faBagShopping} /></button>
-
-                  </div>
-
-                  <div className="d-flex gap-3 star-five mt-1">
-                    {[...Array(5)].map((_, index) => (
-                      <FontAwesomeIcon key={index} icon={faStar} style={{ color: index < element.productReting ? "orange" : "lightgray" }} />
-                    ))}
-                  </div>
-                  <div className="position-absolute  activeshowbuttons">
-                    <button type="button" class="btn btn-outline-dark popular-produ-img">
-                      <FontAwesomeIcon icon={faHeart} /></button>
-                    <button type="button" class="btn btn-outline-dark popular-produ-img mt-2">
-                      <FontAwesomeIcon icon={faEye} /></button>
-                  </div>
-                </div>
-              ))})
-            </div> */}
           </div>
         </div>
       </div>
+
+          {/* models  */}
+          <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content"> 
+        <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+      <div class="modal-body">
+        <div class="row">
+          {/* <!-- Left: Image Gallery --> */}
+          <div class="col-md-6">
+            <div class="d-flex flex-column align-items-center">
+              <img src={selectedmodelImage} class="img-fluid mb-3" style={{height:"100%", width:"100%"}} alt="Product Image"/>
+
+              <div class="d-flex gap-2">
+                {modelData?.variants?.map((image,i) => (
+                    <div className={`main_click_box ${selectedmodelImage === image ? "active" : ""}`} key={i} onClick={()=>{
+                        setSelectedModelImage(image);
+                    }}>
+                        <img src={image} class="img-thumbnail" alt="Thumbnail 1"/>
+                    </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* <!-- Right: Product Details --> */}
+          <div class="col-md-6">
+          <h3 class="modal-title">{modelData.productName}<span class="badge bg-success">In Stock</span></h3>
+           
+            <div class="d-flex align-items-center gap-4 mt-2">
+            <div className="d-flex gap-1 star-five mt-1">
+                                {[...Array(5)].map((_, index) => (
+                                    <FontAwesomeIcon key={index} icon={faStar} style={{ color: index < modelData.productReting ? "orange" : "lightgray" }} />
+                                ))}
+                            </div>
+                            <span class="ms-2">4 Reviews</span>
+              <span class="text-muted"><b>SKU:</b>2,51,594</span> 
+            </div>
+
+            <div class="mt-1 d-flex">
+            <span className="d-flex fw-bold text-success fs-4 ms-2">
+                                    {Array.isArray(modelData.ProductPrice) ? (
+                                        <>
+                                            <b>{modelData.ProductPrice[0]}</b>
+                                            <span className="text-muted"><del>{modelData.ProductPrice[1]}</del></span>
+                                        </>
+                                    ) : (
+                                        <b>{modelData.ProductPrice}</b>
+                                    )}
+                                </span>
+              <span class="badge bg-danger ms-2">64% Off</span>
+            </div>
+            <hr />
+
+
+        <div className="d-flex align-items-center justify-content-between">    <div class="d-flex align-items-center">
+              <span class="fw-bold me-2">Brand:</span>
+              <img src="/Img/Group 19.png" alt="Brand Logo" style={{height: "38px"}}/>
+            </div>
+            <div className="four-icon-hover-2 d-flex align-items-center">
+                <span>Share item:</span>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  <i className="fa-brands fa-facebook"></i></a>
+
+ <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-brands fa-twitter"></i>
+  </a>
+  <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-solid fa-p"></i>
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-brands fa-instagram"></i></a>
+            </div></div>
+
+            <p class="mt-3 text-muted">
+           {modelData.ProductDesciption}
+            </p>
+          <hr />
+            <div class="d-flex align-items-center mt-4 justify-content-between  ">
+              <div className="border d-flex" style={{borderRadius:"22px"}}>
+              <button class="btn btn-outline-secondary" style={{borderRadius:"22px"}}>-</button>
+              <input type="text" class="form-control text-center mx-2"  value="5" style={{width:"10px", border:"none"}}/>
+              <button class="btn btn-outline-secondary" style={{borderRadius:"22px"}}>+</button>
+              </div>
+              <button class="btn ms-3 addtocardBtn d-flex align-items-center gap-2" style={{background:"green" , color:"white"}}>Add to Cart <FontAwesomeIcon icon={faBagShopping} /></button>
+              <button type="button" class="btn btn-outline-dark popular-produ-img">
+              <FontAwesomeIcon icon={faHeart} /></button>
+            </div>
+            <hr />
+
+            <p class="mt-3"><strong>Category:</strong>{modelData.Productcategories}</p>    
+            <p><strong>Tags:</strong> {modelData.ProductTags}</p>
+
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </>
   )
 }

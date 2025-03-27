@@ -14,32 +14,31 @@ import "swiper/css/navigation";
 import { Link } from "react-router";
 
 
-
-
-
-
-
-
 function Home() {
     const [visibleProducts, setVisibleProducts] = useState(10);
     const [activeProduct, setActiveProduct] = useState(null);
     const [factivieProduct, setFactiveProduct] = useState(null);
     const [sactivieProduct, setSactiveProduct] = useState(null);
 
-
-    // const [showAll, setShowAll] = useState(false);
     const [showAllt, setShowAllt] = useState(false);
     const [showAlltt, setShowAlltt] = useState(false);
+    const [modelData, setModelData] = useState({});
+    const [selectedmodelImage, setSelectedModelImage] = useState({});
 
     const loadMoreProducts = () => {
         setVisibleProducts((prev) => prev + 10);
     };
 
+    const openModel = (item)=>{
+        setModelData(item);
+        setSelectedModelImage(item.variants[0])
+        const myModal = new bootstrap.Modal(document.getElementById("quickViewModal"));
+        myModal.show();
+    }
     // const displayedProducts = showAll ? Popular_Categories : Popular_Categories.slice(0, 12);
     const displayedProductst = showAllt ? Popular_Products : Popular_Products.slice(0, 10);
     const displayedProductstt = showAlltt ? Featured_Products : Featured_Products.slice(0, 5);
 
-//    const id = "23";
     return (
         <>
             <div className="container text-center mt-md-5 mt-3">
@@ -75,12 +74,12 @@ function Home() {
                 <div className="row">
                     {Popular_Categories.map((element) => (
                         <div className={`col-md-2 col-sm-4 col-6 mt-3 main_popular_categories ${factivieProduct === element.id ? "active" : ""}`} key={element.id} onClick={() => setFactiveProduct(element.id)}>
-                            <Link to={`/BlogPage/${element.id}`}>
                             <div className="border p-2 main_popular_categories_inner">
+                            <Link to={`/BlogPage/${element.id}/${element.productName}`} style={{textDecoration:"none"}}>
                                 <img src={element.productImg} className="popular_cargories-img" alt="" />
                                 <span className="d-flex text-center justify-content-center main_popular_categ_name">{element.productName}</span>
-                            </div>
                     </Link>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -109,7 +108,8 @@ function Home() {
                                 </button>
                             )}
                             <img src={element.productImg} className="products_img" alt="" />
-                            <span className="d-flex activedtextcolor">{element.productName}</span>
+                            <Link to={`/productDescriptionpage/${element.id}`} style={{color:"black"}} className="home-click-btn">
+                            <span className="d-flex activedtextcolor">{element.productName}</span></Link>
                             <div className="d-flex align-items-center justify-content-between">
                                 <span className="d-flex">
                                     {Array.isArray(element.ProductPrice) ? (
@@ -133,12 +133,15 @@ function Home() {
                             <div className="position-absolute  activeshowbuttons">
                                 <button type="button" class="btn btn-outline-dark popular-produ-img">
                                     <FontAwesomeIcon icon={faHeart} /></button>
-                                <button type="button" class="btn btn-outline-dark popular-produ-img mt-2">
+                                <button type="button" class="btn btn-outline-dark popular-produ-img mt-2" onClick={() => {
+                                    openModel(element)
+                                }}>
                                     <FontAwesomeIcon icon={faEye} /></button>
                             </div>
                         </div>
                     ))}
                 </div>
+     
                 <div className="row mt-5 Three-img">
                     <div className="col-md-4 col-sm-6 ">
                         <img src="./Img/Bannar (5).png" alt="" />
@@ -284,7 +287,7 @@ function Home() {
                                 </div>
                             ))}</span>
                             <p className="text-start mt-2 client-viewText">{element.ProductTitle}</p>
-                            <Link to="/BlogDetails">
+                            <Link to="/BlogDetails" style={{textDecoration:"none"}}>
                             <span className="d-flex fs-5 align-items-center gap-2 text-success">Read More <FontAwesomeIcon icon={faArrowRight} /></span></Link>
                         </div>
                     ))}
@@ -388,6 +391,109 @@ function Home() {
                 </div>
             </div>
 
+
+
+
+
+
+            {/* models  */}
+            <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content"> 
+        <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+      <div class="modal-body">
+        <div class="row">
+          {/* <!-- Left: Image Gallery --> */}
+          <div class="col-md-6">
+            <div class="d-flex flex-column align-items-center">
+              <img src={selectedmodelImage} class="img-fluid mb-3" style={{height:"100%", width:"100%"}} alt="Product Image"/>
+
+              <div class="d-flex gap-2">
+                {modelData?.variants?.map((image,i) => (
+                    <div className={`main_click_box ${selectedmodelImage === image ? "active" : ""}`} key={i} onClick={()=>{
+                        setSelectedModelImage(image);
+                    }}>
+                        <img src={image} class="img-thumbnail" alt="Thumbnail 1"/>
+                    </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* <!-- Right: Product Details --> */}
+          <div class="col-md-6">
+          <h3 class="modal-title">{modelData.productName}<span class="badge bg-success">In Stock</span></h3>
+           
+            <div class="d-flex align-items-center gap-4 mt-2">
+            <div className="d-flex gap-1 star-five mt-1">
+                                {[...Array(5)].map((_, index) => (
+                                    <FontAwesomeIcon key={index} icon={faStar} style={{ color: index < modelData.productReting ? "orange" : "lightgray" }} />
+                                ))}
+                            </div>
+                            <span class="ms-2">4 Reviews</span>
+              <span class="text-muted"><b>SKU:</b>2,51,594</span> 
+            </div>
+
+            <div class="mt-1 d-flex">
+            <span className="d-flex fw-bold text-success fs-4 ms-2">
+                                    {Array.isArray(modelData.ProductPrice) ? (
+                                        <>
+                                            <b>{modelData.ProductPrice[0]}</b>
+                                            <span className="text-muted"><del>{modelData.ProductPrice[1]}</del></span>
+                                        </>
+                                    ) : (
+                                        <b>{modelData.ProductPrice}</b>
+                                    )}
+                                </span>
+              <span class="badge bg-danger ms-2">64% Off</span>
+            </div>
+            <hr />
+
+
+        <div className="d-flex align-items-center justify-content-between">    <div class="d-flex align-items-center">
+              <span class="fw-bold me-2">Brand:</span>
+              <img src="/Img/Group 19.png" alt="Brand Logo" style={{height: "38px"}}/>
+            </div>
+            <div className="four-icon-hover-2 d-flex align-items-center">
+                <span>Share item:</span>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+  <i className="fa-brands fa-facebook"></i></a>
+
+ <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-brands fa-twitter"></i>
+  </a>
+  <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-solid fa-p"></i>
+  </a>
+  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+    <i className="fa-brands fa-instagram"></i></a>
+            </div></div>
+
+            <p class="mt-3 text-muted">
+           {modelData.ProductDesciption}
+            </p>
+          <hr />
+            <div class="d-flex align-items-center mt-4 justify-content-between  ">
+              <div className="border d-flex" style={{borderRadius:"22px"}}>
+              <button class="btn btn-outline-secondary" style={{borderRadius:"22px"}}>-</button>
+              <input type="text" class="form-control text-center mx-2"  value="5" style={{width:"10px", border:"none"}}/>
+              <button class="btn btn-outline-secondary" style={{borderRadius:"22px"}}>+</button>
+              </div>
+              <button class="btn ms-3 addtocardBtn d-flex align-items-center gap-2" style={{background:"green" , color:"white"}}>Add to Cart <FontAwesomeIcon icon={faBagShopping} /></button>
+              <button type="button" class="btn btn-outline-dark popular-produ-img">
+              <FontAwesomeIcon icon={faHeart} /></button>
+            </div>
+            <hr />
+
+            <p class="mt-3"><strong>Category:</strong>{modelData.Productcategories}</p>    
+            <p><strong>Tags:</strong> {modelData.ProductTags}</p>
+
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         </>
     )
 }

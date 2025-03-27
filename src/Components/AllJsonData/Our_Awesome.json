@@ -1,0 +1,38 @@
+[
+    {
+        "id" : 1,
+        "ourImage" : "/Img/Image (31).png",
+        "ourName" : "Jenny  Wilson",
+        "ourwork" : "Ceo & Founter"
+    }, 
+    {
+        "id" : 2,
+        "ourImage" : "/Img/Image (28).png",
+        "ourName" : "Jane Cooper",
+        "ourwork" : "worker"
+    },
+    {
+        "id" : 3,
+        "ourImage" : "/Img/Image (29).png",
+        "ourName" : "Cody Fisher",
+        "ourwork" : "Security Guard"
+    },
+    {
+        "id" : 4,
+        "ourImage" : "/Img/Image (30).png",
+        "ourName" : "Robert Fox",
+        "ourwork" : "Seniour Farmer Manage"
+    },
+    {
+        "id" : 5,
+        "ourImage" : "/Img/Image (31).png",
+        "ourName" : "Jenny  Wilson",
+        "ourwork" : "Ceo & Founter"
+    },
+    {
+        "id" : 6,
+        "ourImage" : "/Img/Image (29).png",
+        "ourName" : "Jenny  Wilson",
+        "ourwork" : "Ceo & Founter"
+    }
+]

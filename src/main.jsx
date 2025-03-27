@@ -9,6 +9,8 @@ import Home from './Components/Home/Home.jsx'
 import BlogPage from './Components/Home/BlogPage.jsx'
 import DropSelectedPage from './Components/Home/dropSelectedPage.jsx'
 import BlogDetails from './Components/Home/Blogdetails.jsx'
+import About from './Components/Home/About.jsx'
+import ProductDesciptionPage from './Components/Home/Product_DescriptionPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ element: <Home />
       {
         path : "/BlogDetails",
         element : <BlogDetails/> 
+      },
+      {
+        path : "/about",
+        element : <About/> 
+      },
+      {
+        path : "/productDescriptionpage/:id",
+        element : <ProductDesciptionPage/> 
       }
     ]
   }

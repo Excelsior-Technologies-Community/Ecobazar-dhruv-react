@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Kristin Watson",
+        "image": "/Img/Image (32).png",
+        "rating": 5,
+        "comment": "Duis at ullamcorper nulla, eu dictum eros.",
+        "time": "2 min ago"
+    },
+    {
+        "id": 2,
+        "name": "Jane Cooper",
+        "image": "/Img/Profile.png",
+        "rating": 4,
+        "comment": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to 'bolt' or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+        "time": "30 Apr, 2021"
+    },
+    {
+        "id": 3,
+        "image": "/Img/Image (33).png",
+        "name": "Jacob Jones",
+        "rating": 5,
+        "comment": "Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.",
+        "time": "2 min ago"
+    },
+    {
+        "id": 4,
+        "name": "Ralph Edwards",
+        "image": "/Img/Image (34).png",
+        "rating": 5,
+        "comment": "200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi, from USA",
+        "time": "2 min ago"
+    },
+    {
+        "id": 5,
+        "name": "Kristin Watson",
+        "image": "/Img/Image (32).png",
+        "rating": 5,
+        "comment": "Duis at ullamcorper nulla, eu dictum eros.",
+        "time": "2 min ago"
+    },
+    {
+        "id": 6,
+        "name": "Jane Cooper",
+        "image": "/Img/Profile.png",
+        "rating": 4,
+        "comment": "Keep the soil evenly moist for the healthiest growth. If the sun gets too hot, Chinese cabbage tends to 'bolt' or go to seed; in long periods of heat, some kind of shade may be helpful. Watch out for snails, as they will harm the plants.",
+        "time": "30 Apr, 2021"
+    },
+    {
+        "id": 7,
+        "image": "/Img/Image (33).png",
+        "name": "Jacob Jones",
+        "rating": 5,
+        "comment": "Vivamus eget euismod magna. Nam sed lacinia nibh, et lacinia lacus.",
+        "time": "2 min ago"
+    },
+    {
+        "id": 8,
+        "name": "Ralph Edwards",
+        "image": "/Img/Image (34).png",
+        "rating": 5,
+        "comment": "200+ Canton Pak Choi Bok Choy Chinese Cabbage Seeds Heirloom Non-GMO Productive Brassica rapa VAR. chinensis, a.k.a. Canton's Choice, Bok Choi, from USA",
+        "time": "2 min ago"
+    }
+]
