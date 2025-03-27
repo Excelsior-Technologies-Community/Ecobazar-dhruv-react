@@ -65,7 +65,7 @@ function BlogPage() {
       return;
       
     }
-    navigate(`/BlogPage/${category.id}`);
+    navigate(`/BlogPage/${category.id}/${category.name}`);
   }
 
   

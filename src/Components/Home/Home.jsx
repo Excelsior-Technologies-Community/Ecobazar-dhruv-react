@@ -12,9 +12,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router";
+import { useWishlist } from "./Context/WishlistContext"; // Import Wishlist Context
 
 
 function Home() {
+
+    const { wishlist, toggleWishlist } = useWishlist();
     const [visibleProducts, setVisibleProducts] = useState(10);
     const [activeProduct, setActiveProduct] = useState(null);
     const [factivieProduct, setFactiveProduct] = useState(null);
@@ -131,8 +134,12 @@ function Home() {
                                 ))}
                             </div>
                             <div className="position-absolute  activeshowbuttons">
-                                <button type="button" class="btn btn-outline-dark popular-produ-img">
-                                    <FontAwesomeIcon icon={faHeart} /></button>
+                            <button type="button" className="btn btn-outline-dark popular-produ-img" onClick={() => toggleWishlist(element)}>
+                        <FontAwesomeIcon
+                            icon={faHeart}
+                            style={{ color: wishlist.some((item) => item.id === element.id) ? "red" : "black" }}
+                        />
+                    </button>
                                 <button type="button" class="btn btn-outline-dark popular-produ-img mt-2" onClick={() => {
                                     openModel(element)
                                 }}>

@@ -110,6 +110,7 @@
   padding: 3px 8px;
   color: gray;
 }
+
 .main-activetab.active{
   border-bottom: 2px solid green !important;
 }

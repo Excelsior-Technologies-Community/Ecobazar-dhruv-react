@@ -1,6 +1,7 @@
 import { faAngleDown, faHeart, faLocationDot, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
+import Header_Inner from "./Heder_inner";
 
 function Header() {
     return (
@@ -28,7 +29,7 @@ function Header() {
   <button className="btn top-head-button" type="button" id="button-addon2">Button</button>
 </div>
 <div className="col-md-4 col-sm-4 col-6 offset-sm-4 d-flex justify-content-center align-item-center last-col-gap">
-<div className="border-r-heart"><FontAwesomeIcon icon={faHeart} className="font-heart border-r-heart-inner" /></div>
+<div className="border-r-heart"><Link to="/wishlist"><FontAwesomeIcon icon={faHeart} className="font-heart border-r-heart-inner" /> </Link></div>
 <div className="position-relative logo-img">
 <img src="./public/Img/Cart.png" alt="" />
 <div className="position-absolute bag-cart">
@@ -83,7 +84,7 @@ function Header() {
 </div>   
 
 
-            
+           <Header_Inner /> 
         </>
     )
 }
