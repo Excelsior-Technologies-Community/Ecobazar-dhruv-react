@@ -1,4 +1,6 @@
 import { createContext, useState, useContext } from "react";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 // Create Wishlist Context
 const WishlistContext = createContext();
@@ -9,8 +11,7 @@ export const useWishlist = () => useContext(WishlistContext);
 // Provider Component
 export const WishlistProvider = ({ children }) => {
     const [wishlist, setWishlist] = useState([]);
-
-    // Function to Add or Remove from Wishlist
+     // Function to Add or Remove from Wishlist
     const toggleWishlist = (product) => {
         setWishlist((prevWishlist) => {
             const isProductInWishlist = prevWishlist.find((item) => item.id === product.id);

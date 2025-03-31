@@ -53,6 +53,7 @@
   color: white;
 }
 
+
 .margin-left {
   margin-left: 6px;
 }
@@ -283,9 +284,26 @@
 .home-click-btn{
   text-decoration: none !important;
 }
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
 .main-tabs button{
   border: none;
   background: none;
+}
+.form-check-input:checked {
+  background-color: green;
+  border-color: green;
+}
+.offcanvas-backdrop.show {
+  opacity: none;
+}
+.offcanvas-footer{
+  padding-right: 33px;
+  padding-bottom: 10px;
 }
 .addtocardbtn {
   padding: 10px 110px 10px 110px;

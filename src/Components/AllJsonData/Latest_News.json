@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "ProductImg": "./Img/Image (6).png",
+        "ProductImg": "/Img/Image (6).png",
         "productEffect": [
             {
                 "icon": "fa-solid fa-utensils",
@@ -16,11 +16,29 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 2,
-        "ProductImg": "./Img/Image (7).png",
+        "ProductImg": "/Img/Image (7).png",
         "productEffect": [
             {
                 "icon": "fa-solid fa-utensils",
@@ -35,11 +53,30 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
+        
     },
     {
         "id": 3,
-        "ProductImg": "./Img/Image (8).png",
+        "ProductImg": "/Img/Image (8).png",
         "productEffect": [
             {
                 "icon": "fa-solid fa-utensils",
@@ -54,7 +91,25 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 4,
@@ -73,7 +128,25 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 5,
@@ -92,7 +165,25 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 6,
@@ -111,7 +202,25 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 7,
@@ -130,7 +239,25 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     },
     {
         "id": 8,
@@ -149,6 +276,24 @@
                 "title": "byAdmin"
             }
         ],
-        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum."
+        "ProductTitle": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+        "author": {
+            "Image": "/Img/Image (33).png",
+            "name": "Cameron Williamson",
+            "date": "April 4, 2021",
+            "read_time": "6 min read"
+        },
+        "descriptiontitle": "Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.",
+        "productdescriton": {
+                "desp1": "Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus ",
+    
+                "desp2": "Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus . Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.",
+                
+                "desp3": "Sed dictum non nulla eu imperdiet. Duis elit libero, vulputate quis vehicula ut, vestibulum ut mauris. Nullam non felis varius dui rutrum rutrum in a nisi. Suspendisse elementum rutrum lorem sed luctus. Proin iaculis euismod metus non sollicitudin. Duis vel luctus lacus. Nullam faucibus iaculis convallis. In ullamcorper nibh ipsum, eget lacinia eros pulvinar a. Integer accumsan arcu nec faucibus ultricies. "
+            },
+            "Imges" : {
+                "Img1": "/Img/image (35).png",
+                "Img2": "/Img/image (36).png"
+            }
     }
 ]

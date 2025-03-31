@@ -13,7 +13,10 @@ import About from "./Components/Home/About.jsx";
 import ProductDesciptionPage from "./Components/Home/Product_DescriptionPage.jsx";
 import Wishlist from "./Components/Home/Wishlist.jsx";
 import { WishlistProvider } from "./Components/Home/Context/WishlistContext.jsx";
-
+import Shopping_Cart from "./Components/Home/Shopping_Cart.jsx";
+import CheckOut from "./Components/Home/CheckOutPage.jsx";
+import Single_Blog from "./Components/Home/SIngle_Blog.jsx";
+import ContactUs from "./Components/Home/Contact.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,19 +51,23 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/about/:name",
+        element: <About />,
+      },
+      {
         path: "/productDescriptionpage/:id",
         element: <ProductDesciptionPage />,
       },
       {
-        path: "/:category",
+        path: "/category",
         element: <BlogPage />,
       },
       {
-        path: "/:category/:subcategory",
+        path: "/category/:subcategory",
         element: <BlogPage />,
       },
       {
-        path: "/:category/:subcategory/:product",
+        path: "/category/:subcategory/:product",
         element: <BlogPage />,
       },
       {
@@ -71,6 +78,26 @@ const router = createBrowserRouter([
       {
         path: "/wishlist/:name",
         element: <Wishlist />
+      },
+      {
+        path: "/shoppingCart",
+        element: <Shopping_Cart/>
+      },
+      {
+        path: "/checkOutPage",
+        element: <CheckOut/>
+      },
+      {
+        path: "/singleBlog",
+        element: <Single_Blog/>
+      },
+      {
+        path: "/singleBlog/:id",
+        element: <Single_Blog/>
+      },
+      {
+        path: "/contact",
+        element: <ContactUs/>
       },
     ],
   },

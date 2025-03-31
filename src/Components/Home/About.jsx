@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { faArrowRight, faCheck, faStar } from "@fortawesome/free-solid-svg-icons"
 import { height } from "@fortawesome/free-solid-svg-icons/fa0"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,8 +7,10 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import {Swiper, SwiperSlide } from "swiper/react";
 import Client_Testimonials from '../AllJsonData/Client_Testimonials.json'
+import { useParams } from "react-router";
 
 function About() {
+
     
     return(
       <>
@@ -172,32 +175,6 @@ Organic Food Store</h1>
 <div className="row">
                     <div className="col-md-12">
                         <img src="./Img/Company Logo.png" alt="" style={{ height: "100%", width: "100%" }} />
-                    </div>
-                </div>
-                <div className="row mt-md-2">
-                    <div className="col-md-4 client-viewText mt-sm-4 mt-3">
-                        <h4 className="">Subcribe our Newsletter</h4>
-                        <span className="">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</span>
-                    </div>
-                    <div className="col-md-6 col-sm-6 col-6 mt-md-4">
-                        <div class="input-group mb-3 border-radius">
-                            <input type="text" class="form-control border-radius" placeholder="Your email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                            <button class="btn btn-success border-radius" type="button" id="button-addon2">Subscribe</button>
-                        </div>
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-6 offset-sm-2 offset-md-0 d-flex mt-md-4 justify-content-between  main-for-icon">
-                      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-  <i className="fa-brands fa-facebook"></i></a>
-
- <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-    <i className="fa-brands fa-twitter"></i>
-  </a>
-  <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
-    <i className="fa-solid fa-p"></i>
-  </a>
-  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-    <i className="fa-brands fa-instagram"></i>
-  </a>
                     </div>
                 </div>
 </div>

@@ -13,6 +13,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Link } from "react-router";
 import { useWishlist } from "./Context/WishlistContext"; // Import Wishlist Context
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 
 function Home() {
@@ -294,8 +296,8 @@ function Home() {
                                 </div>
                             ))}</span>
                             <p className="text-start mt-2 client-viewText">{element.ProductTitle}</p>
-                            <Link to="/BlogDetails" style={{textDecoration:"none"}}>
-                            <span className="d-flex fs-5 align-items-center gap-2 text-success">Read More <FontAwesomeIcon icon={faArrowRight} /></span></Link>
+                           
+                            <span className="d-flex fs-5 align-items-center gap-2 text-success">Read More <FontAwesomeIcon icon={faArrowRight} /></span>
                         </div>
                     ))}
                 </div>
@@ -378,24 +380,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="row mt-md-5">
-                    <div className="col-md-4 client-viewText mt-sm-4 mt-3">
-                        <h4 className="">Subcribe our Newsletter</h4>
-                        <span className="">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</span>
-                    </div>
-                    <div className="col-md-6 col-sm-6 col-6 mt-3">
-                        <div class="input-group mb-3 border-radius">
-                            <input type="text" class="form-control border-radius" placeholder="Your email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                            <button class="btn btn-success border-radius" type="button" id="button-addon2">Subscribe</button>
-                        </div>
-                    </div>
-                    <div className="col-md-2 col-sm-4 col-6 offset-sm-2 offset-md-0 d-flex mt-3 justify-content-between main-for-icon">
-                        <i class="fa-brands fa-facebook frist-icons"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-solid fa-p"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                </div>
+
             </div>
 
 

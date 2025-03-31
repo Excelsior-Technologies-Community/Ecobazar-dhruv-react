@@ -1,8 +1,10 @@
 import { faAngleDown, faArrowRight, faCalendar, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import Latest_News from '../AllJsonData/Latest_News.json'
+import { Link, useParams } from "react-router";
 
 function BlogDetails() {
+  const {id} = useParams();
     return(
         <>
         <div className="container text-center">
@@ -103,7 +105,13 @@ function BlogDetails() {
                                 </div>
                             ))}</span>
                             <p className="text-start mt-2 client-viewText">{element.ProductTitle}</p>
-                            <span className="d-flex fs-5 align-items-center gap-2 text-success">Read More <FontAwesomeIcon icon={faArrowRight} /></span>
+                            <Link 
+            to={`/singleBlog/${element.id}`} 
+            state={{ newsDetails: element }} 
+            className="d-flex fs-5 align-items-center gap-2 text-success"
+        >
+            Read More <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
                         </div>
                     ))}
 </div>

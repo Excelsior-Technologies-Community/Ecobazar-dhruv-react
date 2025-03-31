@@ -1,9 +1,32 @@
 function Footer() {
     return (
         <>
-            <footer className="footer">
+<footer>
+    
+<div className="container text-center">
+        <div className="row mt-md-5">
+                    <div className="col-md-4 client-viewText mt-sm-4 mt-3">
+                        <h4 className="">Subcribe our Newsletter</h4>
+                        <span className="">Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.</span>
+                    </div>
+                    <div className="col-md-6 col-sm-6 col-6 mt-3">
+                        <div class="input-group mb-3 border-radius">
+                            <input type="text" class="form-control border-radius" placeholder="Your email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            
+                        </div>
+                    </div>
+                    <div className="col-md-2 col-sm-4 col-6 offset-sm-2 offset-md-0 d-flex mt-3 justify-content-between main-for-icon">
+                        <i class="fa-brands fa-facebook frist-icons"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-solid fa-p"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                </div>
+        </div>
+            <div className="footer">
 
-                <div className="container text-center ">
+                <div className="container text-center">
+
                     <div className="row mt-5">
                         <div className="col-md-4 col-sm-8 col-12 mt-5">
                             <img src="./Img/Logo (1).png" className="d-flex" alt="" />
@@ -54,7 +77,8 @@ function Footer() {
                     </div>
                 </div>
 
-            </footer>
+            </div>
+</footer>
         </>
     )
 }

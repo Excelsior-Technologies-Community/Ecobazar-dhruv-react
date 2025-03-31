@@ -13,7 +13,7 @@
         "Productcategories":"Fresh Fruit",
         "productName": "Green Apple",
         "ProductPrice": [
-            "$4.99",
+            "4.99",
             "20.99"
         ],
         "productReting": 4,

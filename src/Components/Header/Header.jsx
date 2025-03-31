@@ -2,8 +2,10 @@ import { faAngleDown, faHeart, faLocationDot, faPhoneVolume } from "@fortawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router";
 import Header_Inner from "./Heder_inner";
+import { useState } from "react";
 
 function Header() {
+    const [cart , setCart] = useState([]);
     return (
         <>
             <div className="row">
@@ -31,17 +33,18 @@ function Header() {
 <div className="col-md-4 col-sm-4 col-6 offset-sm-4 d-flex justify-content-center align-item-center last-col-gap">
 <div className="border-r-heart"><Link to="/wishlist"><FontAwesomeIcon icon={faHeart} className="font-heart border-r-heart-inner" /> </Link></div>
 <div className="position-relative logo-img">
-<img src="./public/Img/Cart.png" alt="" />
-<div className="position-absolute bag-cart">
-    <span>2</span>
+<img src="/Img/Cart.png" alt="" />
+<div className="position-absolute bag-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <span>{cart.length}</span>
 </div>
 </div>
-<div className="d-flex justify-content-center align-item-center flex-column ">
+<div className="d-flex justify-content-center align-item-center flex-column " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
     <span className="head-span">Shoping Cart</span>
     <span className="head-span-2"><b> $57.00</b></span>
 </div>
 </div>      
 </div>
+
 
 <div className="row navbar bg-dark border-bottom border-body mt-3 color-white" data-bs-theme="dark">
     <div className="d-md-none d-sm-flex col-5 col-sm-5 offset-1 offset-sm-1 "><img src="./Img/Categories.png" style={{height:"30px"}} alt="" /></div>
@@ -51,31 +54,34 @@ function Header() {
    Home
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button></Link>
-  <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
+  <Link to="/Blogpage" style={{color:"white" , textDecoration:"none"}}>
+  <button class="btn d-flex align-items-center gap-2 color-white color-white" type="button" data-bs-toggle="dropdown" disabled>
    Shop
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
-  </button>
-    <Link to="/dropSelectedPage" style={{color:"white"}}>
-  <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
+  </button></Link>
+    <Link to="/dropSelectedPage" style={{color:"white" , textDecoration:"none"}}>
+  <button class="btn d-flex align-items-center gap-2 color-white color-white" type="button" data-bs-toggle="dropdown" disabled>
    Shop_2
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/> 
   </button>
   </Link>
-  <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
+  <button class="btn d-flex align-items-center gap-2 color-white color-white" type="button" data-bs-toggle="dropdown" disabled>
    Pages
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
   </button>
-  <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
+  <Link to="/BlogDetails" style={{color:"white" , textDecoration:"none"}}>
+  <button class="btn d-flex align-items-center gap-2 color-white color-white" type="button" data-bs-toggle="dropdown" disabled>
    Blog
   <FontAwesomeIcon icon={ faAngleDown} className="margin-left"/>
-  </button>
+  </button></Link>
   <Link to="/about" style={{color:"white"}}>
   <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
    About Us
   </button></Link>
+  <Link to="/contact" style={{color:"white" , textDecoration:"none"}}>
   <button class="btn gap-2 color-white" type="button" data-bs-toggle="dropdown" disabled>
    Contact Us
-  </button>
+  </button></Link>
 </div>
 <div className="col-md-4 col-sm-4 col-6">
 <FontAwesomeIcon icon={faPhoneVolume} />
@@ -85,6 +91,10 @@ function Header() {
 
 
            <Header_Inner /> 
+
+
+        {/* offcanvas  */}
+
         </>
     )
 }
